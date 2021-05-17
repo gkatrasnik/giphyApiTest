@@ -6,6 +6,12 @@ gifButton.addEventListener("click", () => {
   fetchGif(readInputText());
 });
 
+inputText.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    fetchGif(readInputText());
+  }
+});
+
 fetchGif();
 
 function readInputText() {

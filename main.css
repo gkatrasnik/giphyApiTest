@@ -1,7 +1,23 @@
 body {
   background-color: #cae5e6;
-  display: flex;
+  background-image: url("https://png.pngtree.com/thumb_back/fw800/background/20191031/pngtree-seamless-pattern-with-banana-cute-background-vector-image_321207.jpg");
   height: 90vh;
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
+  font-family: "Patrick Hand", cursive;
+}
+
+h1 {
+  font-size: 300%;
+  color: rgb(255, 0, 157);
+  margin: 10px;
+}
+
+#navigation {
+  display: flex;
+}
+
+#imgdiv {
+  padding-top: 20px;
 }
