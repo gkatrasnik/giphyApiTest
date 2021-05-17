@@ -12,7 +12,7 @@ inputText.addEventListener("keypress", (e) => {
   }
 });
 
-fetchGif();
+fetchGif(readInputText());
 
 function readInputText() {
   let searchTerm = inputText.value;
