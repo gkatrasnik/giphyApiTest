@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="#" />
+    <script>
+      const img = document.querySelector("img");
+      fetch(
+        "https://api.giphy.com/v1/gifs/translate?api_key=fcgdm73ShRzbtmRCmWOMD7NJt0EEmNJz&s=cats",
+        { mode: "cors" }
+      )
+        .then(function (response) {
+          return response.json();
+        })
+        .then(function (response) {
+          img.src = response.data.images.original.url;
+        });
+    </script>
+    <style>
+      body {
+        background-color: #cae5e6;
+        display: flex;
+        height: 90vh;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </body>
+</html>
