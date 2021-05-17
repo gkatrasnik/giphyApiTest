@@ -1,32 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Gifi</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
   </head>
   <body>
+    <input type="text" id="input" />
+    <button id="gifButton">Random GIF</button>
     <img src="#" />
-    <script>
-      const img = document.querySelector("img");
-      fetch(
-        "https://api.giphy.com/v1/gifs/translate?api_key=fcgdm73ShRzbtmRCmWOMD7NJt0EEmNJz&s=cats",
-        { mode: "cors" }
-      )
-        .then(function (response) {
-          return response.json();
-        })
-        .then(function (response) {
-          img.src = response.data.images.original.url;
-        });
-    </script>
-    <style>
-      body {
-        background-color: #cae5e6;
-        display: flex;
-        height: 90vh;
-        align-items: center;
-        justify-content: center;
-      }
-    </style>
+
+    <script src="main.js"></script>
   </body>
 </html>
