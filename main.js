@@ -1,6 +1,7 @@
 const img = document.querySelector("img");
 const gifButton = document.getElementById("gifButton");
 const inputText = document.getElementById("input");
+const gifUrl = document.getElementById("gifurl");
 
 gifButton.addEventListener("click", () => {
   fetchGif(readInputText());
@@ -29,5 +30,6 @@ function fetchGif(search) {
     })
     .then(function (response) {
       img.src = response.data.images.original.url;
+      gifUrl.textContent = "URL: " + response.data.bitly_url;
     });
 }
