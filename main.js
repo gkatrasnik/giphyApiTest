@@ -13,23 +13,22 @@ inputText.addEventListener("keypress", (e) => {
   }
 });
 
+// call tfe function on load
 fetchGif(readInputText());
 
+//return search term
 function readInputText() {
   let searchTerm = inputText.value;
   return searchTerm;
 }
 
-function fetchGif(search) {
-  fetch(
+//fetch gif from giphy
+async function fetchGif(search) {
+  const response = await fetch(
     `https://api.giphy.com/v1/gifs/translate?api_key=fcgdm73ShRzbtmRCmWOMD7NJt0EEmNJz&s="${search}"`,
     { mode: "cors" }
-  )
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (response) {
-      img.src = response.data.images.original.url;
-      gifUrl.textContent = "URL: " + response.data.bitly_url;
-    });
+  );
+  const gifData = await response.json();
+  img.src = gifData.data.images.original.url;
+  gifUrl.textContent = "URL: " + gifData.data.bitly_url;
 }
