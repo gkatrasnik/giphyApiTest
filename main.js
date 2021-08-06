@@ -3,6 +3,8 @@ const gifButton = document.getElementById("gifButton");
 const inputText = document.getElementById("input");
 const gifUrl = document.getElementById("gifurl");
 
+const APY_KEY = "fcgdm73ShRzbtmRCmWOMD7NJt0EEmNJz";
+
 gifButton.addEventListener("click", () => {
   fetchGif(readInputText());
 });
@@ -25,7 +27,7 @@ function readInputText() {
 //fetch gif from giphy
 async function fetchGif(search) {
   const response = await fetch(
-    `https://api.giphy.com/v1/gifs/translate?api_key=fcgdm73ShRzbtmRCmWOMD7NJt0EEmNJz&s="${search}"`,
+    `https://api.giphy.com/v1/gifs/translate?api_key=${APY_KEY}&s="${search}"`,
     { mode: "cors" }
   );
   const gifData = await response.json();
